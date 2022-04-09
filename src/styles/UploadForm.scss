@@ -1,0 +1,13 @@
+form {
+  text-align: center;
+  z-index: 99;
+  margin: 20px;
+
+  input[id='image-upload'] {
+    display: none;
+  }
+
+  label[for='image-upload']{
+    cursor: pointer;
+  }
+}

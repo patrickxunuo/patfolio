@@ -1,0 +1,125 @@
+.header {
+  top: 0;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 9;
+}
+.header__container {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  z-index: 10;
+}
+.header__label {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+.header ul {
+  list-style: none;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  transition: 0.5s ease-in-out;
+}
+.header ul li {
+  margin: 10px;
+  display: inline;
+}
+.header ul li a {
+  text-decoration: none;
+  color: grey;
+  font-size: 20px;
+  font-weight: 500;
+  transition: 0.5s ease-in-out;
+}
+.header ul li a:hover {
+  color: black;
+}
+.header__hamburger {
+  display: none;
+  height: 50px;
+  width: 50px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.header__hamburger__content, .header__hamburger__content::before, .header__hamburger__content::after {
+  height: 2px;
+  width: 30px;
+  background: black;
+  position: relative;
+  transition: 0.5s ease-in-out;
+}
+.header__hamburger__content::before, .header__hamburger__content::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+.header__hamburger__content::before {
+  top: 10px;
+}
+.header__hamburger__content::after {
+  top: -10px;
+}
+.header__hamburger .active {
+  background-color: transparent;
+}
+.header__hamburger .active::after {
+  transform: rotate(45deg);
+  top: 0;
+}
+.header__hamburger .active::before {
+  transform: rotate(-45deg);
+  top: 0;
+}
+.header__canvas {
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  width: 200%;
+  height: 200%;
+  position: fixed;
+  inset: 0;
+  display: none;
+  transition: 0.5s ease-in-out;
+}
+
+@media only screen and (max-width: 900px) {
+  .header__container {
+    width: 100%;
+    padding: 0;
+  }
+  .header ul {
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    opacity: 0;
+    padding-left: 0;
+    transition: 0.5s ease-in-out;
+  }
+  .header ul li {
+    text-align: left;
+  }
+  .header ul:active {
+    opacity: 1;
+    visibility: visible;
+  }
+  .header__label {
+    display: none !important;
+  }
+  .header__hamburger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .header__canvas {
+    display: block;
+  }
+}
+
+/*# sourceMappingURL=Header.css.map */

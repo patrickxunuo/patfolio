@@ -1,0 +1,149 @@
+.header {
+  top: 0;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 9;
+
+  &__container {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    z-index: 10;
+  }
+
+  &__label {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+  }
+
+  ul {
+    list-style: none;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    transition: 0.5s ease-in-out;
+
+    li {
+      margin: 10px;
+      display: inline;
+
+      a {
+        text-decoration: none;
+        color: grey;
+        font-size: 20px;
+        font-weight: 500;
+        transition: 0.5s ease-in-out;
+
+        &:hover {
+          color: black;
+        }
+      }
+    }
+  }
+
+  &__hamburger {
+    display: none;
+    height: 50px;
+    width: 50px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+
+    &__content, &__content::before, &__content::after {
+      height: 2px;
+      width: 30px;
+      background: black;
+      position: relative;
+      transition: 0.5s ease-in-out;
+    }
+
+    &__content::before, &__content::after {
+      content: '';
+      position: absolute;
+      left: 0;
+    }
+
+    &__content::before {
+      top: 10px;
+    }
+
+    &__content::after {
+      top: -10px;
+    }
+
+    .active {
+      background-color: transparent;
+    }
+
+    .active::after {
+      transform: rotate(45deg);
+      top: 0;
+    }
+
+    .active::before {
+      transform: rotate(-45deg);
+      top: 0;
+    }
+  }
+
+  &__canvas {
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    width: 200%;
+    height: 200%;
+    position: fixed;
+    inset: 0;
+    display: none;
+    transition: 0.5s ease-in-out;
+  }
+}
+
+
+@media only screen and (max-width: 900px) {
+  .header {
+    &__container {
+      width: 100%;
+      padding: 0;
+    }
+
+    ul {
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      opacity: 0;
+      padding-left: 0;
+      transition: 0.5s ease-in-out;
+
+      li {
+        text-align: left;
+      }
+
+      &:active {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    &__label {
+      display: none !important;
+    }
+
+    &__hamburger {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__canvas {
+      display: block;
+    }
+  }
+
+}

@@ -1,0 +1,17 @@
+.lifepage__pic__grid{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 90%;
+
+  .lifepage__pic__wrap{
+    height: 300px;
+    width:300px;
+    opacity: 0.9;
+    overflow: hidden;
+    margin: 50px;
+    background-size: cover;
+  }
+}

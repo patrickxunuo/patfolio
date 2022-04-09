@@ -1,0 +1,76 @@
+.lifepage__text, .lifepage__img {
+  position: absolute;
+}
+.lifepage__text {
+  z-index: 10;
+}
+.lifepage__img {
+  height: clamp(150px, 20vw, 600px);
+  transition: 0.2s ease-in-out;
+  filter: grayscale(100%);
+}
+.lifepage__wrap:hover .lifepage__img {
+  filter: grayscale(0%);
+}
+.lifepage__wrap:hover .lifepage__text {
+  filter: drop-shadow(5px 5px red);
+}
+
+.lifepage__special {
+  justify-content: flex-start !important;
+}
+.lifepage__special__wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+}
+.lifepage__special__text, .lifepage__special__img {
+  position: absolute;
+  text-align: center;
+}
+.lifepage__special__text {
+  z-index: 10;
+}
+.lifepage__special__img {
+  height: clamp(150px, 20vw, 600px);
+}
+
+.lifepage__btn__wrap {
+  position: absolute;
+  bottom: 10%;
+}
+.lifepage__btn__wrap .lifepage__btn {
+  height: 5em;
+  width: 5em;
+  background-color: lightcyan;
+  border-radius: 50%;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 900px) {
+  .lifepage__special {
+    padding: 0;
+  }
+  .lifepage__special__text {
+    filter: drop-shadow(0 0 5px red);
+  }
+  .lifepage__special__img {
+    filter: grayscale(0);
+  }
+  .lifepage__special__text__after {
+    margin-top: 50px;
+  }
+
+  .lifepage__pic__grid {
+    width: 300px !important;
+  }
+
+  .lifepage__pic__wrap {
+    height: 200px !important;
+  }
+}
+
+/*# sourceMappingURL=LifePage.css.map */

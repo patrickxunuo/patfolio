@@ -1,0 +1,13 @@
+form {
+  text-align: center;
+  z-index: 99;
+  margin: 20px;
+}
+form input[id=image-upload] {
+  display: none;
+}
+form label[for=image-upload] {
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=UploadForm.css.map */

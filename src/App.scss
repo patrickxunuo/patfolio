@@ -1,0 +1,77 @@
+$default_font: 'Abel', sans-serif;
+
+* {
+  font-family: $default_font;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  scroll-margin-top: 30px;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-size: 400% 400%;
+  text-decoration: none;
+}
+
+.App {
+  height: 100%;
+  width: 100%;
+  scroll-snap-type: y mandatory;
+
+  section {
+    scroll-snap-align: start;
+    flex: none;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 100px;
+  }
+}
+
+.port-wrap-horizontal, .port-wrap-vertical {
+  display: flex;
+  width: 70%;
+  height: 85%;
+  align-items: center;
+  justify-content: space-evenly;
+  transition: 0.5s ease-in-out;
+}
+
+.port-wrap-horizontal {
+  flex-direction: row;
+}
+
+.port-wrap-vertical {
+  flex-direction: column;
+}
+
+.text {
+  font-size: clamp(1.5em, 4vw, 5em);
+  font-weight: lighter;
+  transition: 0.2s ease-in-out;
+}
+
+@media (max-width: 900px) {
+  .port-wrap-horizontal {
+    flex-direction: column;
+  }
+
+  body {
+    background: white;
+    animation: none;
+  }
+  .sub-container {
+    scroll-snap-align: none;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 120vh;
+  }
+  .button-scroll {
+    display: none;
+  }
+}

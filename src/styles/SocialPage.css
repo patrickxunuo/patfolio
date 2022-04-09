@@ -1,0 +1,31 @@
+.socialpage__input {
+  font-size: clamp(30px,5vw, 100px);
+  outline: none;
+  border: none;
+  text-align: center;
+}
+.socialpage__input:focus {
+  outline: none;
+}
+.socialpage__icon__wrap {
+  position: absolute;
+  display: flex;
+  top: 70%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.socialpage__icon {
+  font-size: clamp(8px,5vw, 2em);
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+  margin: 1em;
+}
+
+@media only screen and (max-width: 900px) {
+  .socialpage__icon {
+    margin: 0.5em;
+  }
+}
+
+/*# sourceMappingURL=SocialPage.css.map */

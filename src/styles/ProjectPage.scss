@@ -1,0 +1,243 @@
+.section-project{
+  .text-2{
+    color: white;
+    margin: 50px;
+  }
+
+  .projects-line{
+    position: fixed;
+    height: 100%;
+    width: 2px;
+    background: linear-gradient(white, black);
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .projects-line-dark {
+    position: absolute;
+    height: 1650px;
+    width: 2px;
+    background: linear-gradient(black, white);
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .projects {
+    max-width: 90vw;
+    flex: 1 1 100%;
+    display: flex;
+    justify-content: center;
+
+    ul, li {
+      list-style: none;
+      padding: 0;
+    }
+
+    .card {
+      position: relative;
+      padding: 25px;
+      height: 400px;
+      width: 600px;
+
+      &:hover > .card-link {
+        opacity: 1;
+      }
+    }
+
+    .card-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    .card-link {
+      color: white;
+      height: 50px;
+      width: calc(100% - 50px);
+      display: flex;
+      justify-content: center;
+      background-color: rgba(255, 255, 255, 0.5);
+      align-items: center;
+      position: absolute;
+      bottom: 25px;
+      opacity: 0;
+      font-size: 30px;
+      transition: 0.5s ease-in-out;
+      border-bottom-left-radius: 25px;
+      border-bottom-right-radius: 25px;
+
+      a {
+        margin: 0 50px;
+        color: black;
+        opacity: 0.5;
+        transition: 0.5s ease-in-out;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+
+    .card-content-container {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      display: block;
+      pointer-events: none;
+    }
+
+    .card-content-container.open {
+      top: 0;
+      left: 0;
+      right: 0;
+      position: fixed;
+      z-index: 99;
+      overflow: hidden;
+      padding: 40px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card-content {
+      pointer-events: auto;
+      position: relative;
+      border-radius: 20px;
+      background: #1c1c1e;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
+    }
+
+    .open .card-content {
+      height: auto;
+      max-width: 700px;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .card-open-link {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    .card-image-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      height: 420px;
+      width: 100vw;
+    }
+
+    .open .card-image-container,
+    .open .title-container {
+      z-index: 1;
+    }
+
+    .title-container {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      max-width: 300px;
+    }
+
+    .open .title-container {
+      top: 30px;
+      left: 30px;
+    }
+
+    h2 {
+      color: #fff;
+      margin: 8px 0;
+    }
+
+    .category {
+      color: #fff;
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+
+    .overlay {
+      z-index: 10;
+      position: fixed;
+      background: rgba(0, 0, 0, 0.8);
+      will-change: opacity;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+    }
+
+    .overlay a {
+      display: block;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      width: 100vw;
+      left: 50%;
+      z-index: 1;
+      transform: translateX(-50%);
+    }
+
+    .content-container {
+      padding: 460px 35px 35px 35px;
+      max-width: 700px;
+      width: 90vw;
+      color: #fff;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 900px) {
+  .section-project{
+    padding: 50px 0 0 0 !important;
+
+    .projects-line, .projects-line-dark {
+      display: none !important;
+    }
+
+
+    .projects {
+      flex-direction: column;
+
+      .card {
+        left: 0 !important;
+      }
+
+      .card-image {
+        height: 300px;
+      }
+
+      .card-content {
+        max-width: 300px !important;
+      }
+
+      .card-link {
+        opacity: 1;
+      }
+
+      .content-container {
+        padding-top: 350px;
+
+        p {
+          width: 90%;
+        }
+      }
+    }
+
+    .text-2 {
+      display: none !important;
+    }
+  }
+}

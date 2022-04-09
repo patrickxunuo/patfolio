@@ -1,0 +1,21 @@
+.homepage {
+  &__img {
+    filter: blur(1px);
+    height: clamp(150px, 30vw, 200px);
+    transition: 0.5s ease-in-out;
+  }
+
+  &__wrap:hover > .homepage__img {
+    filter: blur(0)
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .homepage {
+    padding: 0 !important;
+
+    &__text {
+      margin-top: 1em;
+    }
+  }
+}

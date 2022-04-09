@@ -1,0 +1,92 @@
+.lifepage {
+  &__text, &__img {
+    position: absolute;
+  }
+
+  &__text {
+    z-index: 10;
+  }
+
+  &__img {
+    height: clamp(150px, 20vw, 600px);
+    transition: 0.2s ease-in-out;
+    filter: grayscale(100%);
+  }
+
+  &__wrap {
+    &:hover .lifepage__img {
+      filter: grayscale(0%);
+    }
+
+    &:hover .lifepage__text {
+      filter: drop-shadow(5px 5px red);
+    }
+  }
+}
+
+
+.lifepage__special {
+  justify-content: flex-start !important;
+
+  &__wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+  }
+
+  &__text, &__img {
+    position: absolute;
+    text-align: center;
+  }
+
+  &__text {
+    z-index: 10;
+  }
+
+  &__img {
+    height: clamp(150px, 20vw, 600px);
+  }
+}
+
+.lifepage__btn__wrap {
+  position: absolute;
+  bottom: 10%;
+
+  .lifepage__btn {
+    height: 5em;
+    width: 5em;
+    background-color: lightcyan;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+
+@media only screen and (max-width: 900px) {
+  .lifepage__special {
+    padding: 0;
+
+    &__text {
+      filter: drop-shadow(0 0 5px red);
+    }
+
+    &__img {
+      filter: grayscale(0)
+    }
+
+    &__text__after {
+      margin-top: 50px;
+    }
+  }
+
+  .lifepage__pic__grid {
+    width: 300px !important;
+  }
+  .lifepage__pic__wrap {
+    height: 200px !important;
+  }
+}
+
